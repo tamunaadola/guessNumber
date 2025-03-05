@@ -1,57 +1,66 @@
-'use strict';
+let array = [
+   9, 10,15, 12, 8, 4, 6, 5, 1,2, 'adola'
+     
+]
+// console.log(array);
+// let popped = array.pop();
+//  console.log(popped);
+//  console.log(array);
+// let remove = array.shift();
+// console.log(remove);
+ 
 
-let secretNumber = Math.trunc(Math.random() * 20) + 1;
-let score = 20;
-let highscore = 0;
+// for (let i= 0; i < array.length; i++){
+//     if(array[i] >= 5){    //  i = menule elementi anu 9 
+//         console.log(array[i]);
+//     }
+// }
 
-const displayMessage = function (message) {
-  document.querySelector('.message').textContent = message;
-};
+// for (let i= 0; i < array.length; i++){
+//         console.log(array[i]); // menule elementi
+// }
 
-document.querySelector('.check').addEventListener('click', function () {
-  const guess = Number(document.querySelector('.guess').value);
-  console.log(guess, typeof guess);
+// even element
+// for loop + if statement (array[i] aris tu ara even )
+// cosnole.log(array[i]);
 
-  if (!guess) {
-    displayMessage('⛔️ No number!');
-
-
-  } else if (guess === secretNumber) {
-    displayMessage('🎉 Correct Number!');
-    document.querySelector('.number').textContent = secretNumber;
-
-    document.querySelector('body').style.backgroundColor = '#60b347';
-    document.querySelector('.number').style.width = '30rem';
-
-    if (score > highscore) {
-      highscore = score;
-      document.querySelector('.highscore').textContent = highscore;
+// task remove even numbers 
+for (let i = 0; i < array.length; i++){
+    if(array[i] % 2 ===0){  //2.5 , 4 , 
+        console.log(array[i]);
     }
+} 
 
-
-  } else if (guess !== secretNumber) {
-    if (score > 1) {
-      displayMessage(guess > secretNumber ? '📈 Too high!' : '📉 Too low!');
-      score--;
-      document.querySelector('.score').textContent = score;
-    } else {
-      displayMessage('💥 You lost the game!');
-      document.querySelector('.score').textContent = 0;
+// task remove odd numbers 
+for (let i = 0; i < array.length; i++){
+    if(array[i] % 2 !==0){  //2.5 , 4 , 
+        console.log(array[i]);
     }
-  }
+} 
 
-});
+// const day = 'friday';
 
-document.querySelector('.again').addEventListener('click', function () {
-  score = 20;
-  secretNumber = Math.trunc(Math.random() * 20) + 1;
+// switch (day) {
+//     case 'monday':
+//         console.log('todays is monday');
+//         break;
+//     case 'thusday':
+//         console.log('todays i sthusday');
+//         break;
+//     case 'wednesday':
+//     case 'thursday' :
+//         console.log('today is dayoff');
+//     break ;
+//     case 'friday' :
+//         console.log('today is friday');
+//         break;
+// }
 
-  displayMessage('Start guessing...');
-  document.querySelector('.score').textContent = score;
-  document.querySelector('.number').textContent = '?';
-  document.querySelector('.guess').value = '';
 
-  document.querySelector('body').style.backgroundColor = '#222';
-  document.querySelector('.number').style.width = '15rem';
-});
+
+
+
+
+
+
 
